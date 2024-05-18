@@ -1,15 +1,19 @@
 public class Conversacion implements Runnable {
+    private MediadorCasa mediator;
+
+    public Conversacion(MediadorCasa mediator) {
+        this.mediator = mediator;
+    }
+
     @Override
     public void run() {
-        // Iniciar servidor y cliente en diferentes hilos
+        // Iniciar servidor y cliente en diferentes hilos con GUI
         Thread serverThread = new Thread(() -> {
-            ChatServer server = new ChatServer(12345);
-            server.start();
+            new ChatServerGUI(12345, mediator);
         });
-        
+
         Thread clientThread = new Thread(() -> {
-            ChatClient client = new ChatClient("localhost", 12345);
-            client.start();
+            new ChatClientGUI("localhost", 12345);
         });
 
         serverThread.start();

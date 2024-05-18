@@ -5,9 +5,9 @@ public class ChatServer {
     private int port;
     private MediadorCasa mediator;
 
-    public ChatServer(int port) {
+    public ChatServer(int port, MediadorCasa mediator) {
         this.port = port;
-        this.mediator = new MediadorCasa();
+        this.mediator = mediator;
     }
 
     public void start() {
@@ -34,7 +34,7 @@ public class ChatServer {
                         String colorCasa = parts[2];
                         String colorTecho = parts[3];
                         String colorVentanas = parts[4];
-                        mediator.createCasa(colorCasa, colorTecho, colorVentanas);
+                        mediator.addCommand(colorCasa, colorTecho, colorVentanas);
                     } else {
                         System.out.println("Comando incorrecto. Uso: crear casa <colorCasa> <colorTecho> <colorVentanas>");
                     }
@@ -53,4 +53,3 @@ public class ChatServer {
         }
     }
 }
-
