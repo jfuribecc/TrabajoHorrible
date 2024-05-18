@@ -35,7 +35,6 @@ public class MediadorCasa implements Runnable, Mediador {
 
     @Override
     public void notify(Component sender, String event) {
-        // Este método se actualiza según sea necesario para manejar eventos
     }
 
     @Override

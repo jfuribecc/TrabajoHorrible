@@ -7,7 +7,6 @@ public class Conversacion implements Runnable {
 
     @Override
     public void run() {
-        // Iniciar servidor y cliente en diferentes hilos con GUI
         Thread serverThread = new Thread(() -> {
             new ChatServerGUI(12345, mediator);
         });

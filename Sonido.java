@@ -18,7 +18,6 @@ public class Sonido {
             clip.open(audioStream);
             clip.start();
             
-            // Esperar a que el audio termine
             clip.drain();
         } catch (Exception e) {
             e.printStackTrace();

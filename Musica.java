@@ -7,7 +7,6 @@ public class Musica implements Runnable {
 
     @Override
     public void run() {
-        // Lógica para la reproducción de la música
         Sonido sonido = new Sonido(filePath);
         sonido.play();
     }
